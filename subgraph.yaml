@@ -1,0 +1,29 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Contract
+    network: mumbai
+    source:
+      address: "0xA3F4B1ed54b2F0FA12f758b7abd78B84f1365385"
+      abi: Contract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.2
+      language: wasm/assemblyscript
+      entities:
+        - OwnerChanged
+        - PlatformCreated
+        - TokenAdded
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        - event: OwnerChanged(uint256,address)
+          handler: handleOwnerChanged
+        - event: PlatformCreated(address,uint256,string)
+          handler: handlePlatformCreated
+        - event: TokenAdded(uint256,uint256,uint256)
+          handler: handleTokenAdded
+      file: ./src/mapping.ts
