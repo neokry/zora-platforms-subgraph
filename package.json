@@ -4,10 +4,10 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ patrickgenevich/zora-platforms-subgraph",
-    "create-local": "graph create --node http://localhost:8020/ patrickgenevich/zora-platforms-subgraph",
-    "remove-local": "graph remove --node http://localhost:8020/ patrickgenevich/zora-platforms-subgraph",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 patrickgenevich/zora-platforms-subgraph"
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ patrickgenevich/zora-platforms-mumbai --access-token ACCESS_TOKEN",
+    "create-local": "graph create --node http://localhost:8020/ patrickgenevich/zora-platforms-mumbai",
+    "remove-local": "graph remove --node http://localhost:8020/ patrickgenevich/zora-platforms-mumbai",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 patrickgenevich/zora-platforms-mumbai"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.19.0",

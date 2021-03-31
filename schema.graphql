@@ -1,6 +1,12 @@
-type ExampleEntity @entity {
+type Platform @entity {
   id: ID!
-  count: BigInt!
-  platformId: BigInt! # uint256
-  newOwner: Bytes! # address
+  tokens: [Token!]
+  name: String!
+  platformId: BigInt!
+  owner: Bytes!
+}
+
+type Token @entity {
+  id: ID!
+  created: BigInt!
 }
